@@ -1,4 +1,11 @@
 <h2>Pokemon</h2>
 <div>
-    <%= pokemon['name'] %>
+    <div class="pokemon-grid">
+        <% pokemon.forEach(p => { %>
+                <div>
+                    <p><%= p['name'] %></p>
+                    <img src="<%= p['sprites']['front_default'] %>">
+                </div>               
+        <% }) %>
+    </div>        
 </div>
