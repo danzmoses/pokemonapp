@@ -3,6 +3,57 @@ const router = express.Router()
 const axios = require('axios')
 const BASE_URL = "https://pokeapi.co/api/v2"
 
+const generationMap = [
+    {
+        name: "Kanto",
+        generation: 1,
+        limit: 151,
+        offset: 0
+    },
+    {
+        name: "Johto",
+        generation: 2,
+        limit: 100,
+        offset: 151
+    },
+    {
+        name: "Hoenn",
+        generation: 3,
+        limit: 135,
+        offset: 251,
+    },
+    {
+        name: "Sinnoh",
+        generation: 4,
+        limit: 108,
+        offset: 386
+    },
+    {
+        name: "Unova",
+        generation: 5,
+        limit: 155,
+        offset: 494
+    },
+    {
+        name: "Kalos",
+        generation: 6,
+        limit: 72,
+        offset: 649
+    },
+    {
+        name: "Alola",
+        generation: 7,
+        limit: 88,
+        offset: 721
+    },
+    {
+        name: "Galar",
+        generation: 8,
+        limit: 89,
+        offset: 809
+    }
+]
+
 // All pokemon / Search pokemon
 router.get('/', async (req, res, next) => {
 
@@ -13,8 +64,17 @@ router.get('/', async (req, res, next) => {
             searchOptions = new RegExp(req.query.name, 'i')
         }
 
+        let limit = 151
+        let offset = 0
+        generationMap.forEach((gen) => {
+            if (gen.generation === parseInt(req.query.generation)) {
+                limit = gen.limit
+                offset = gen.offset
+            }
+        })
+
         // make API call to get list of all pokemon
-        const pokemon = await axios.get(BASE_URL + `/pokemon?limit=1200&offset=0`)
+        const pokemon = await axios.get(BASE_URL + `/pokemon?limit=${limit}&offset=${offset}`)
 
         console.log(pokemon.data.results)
 
