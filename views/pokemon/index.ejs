@@ -1,10 +1,14 @@
 <h2>Pokemon</h2>
 <div>
+    <form action="/pokemon" method="GET">
+        <input type="text" name="name">
+        <button type="submit">Search</button>
+    </form>
     <div class="pokemon-grid">
         <% pokemon.forEach(p => { %>
                 <div>
-                    <p><%= p['name'] %></p>
                     <img src="<%= p['sprites']['front_default'] %>">
+                    <p><%= p['name'] %></p>
                 </div>               
         <% }) %>
     </div>        
