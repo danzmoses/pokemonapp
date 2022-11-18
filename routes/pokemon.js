@@ -103,6 +103,10 @@ router.get('/', async (req, res, next) => {
         
         console.log(promises.length)
 
+        pokeList.forEach(p => {
+            p.name = capitalizeFirstChar(p.name)
+        })
+
         // render main page with retrieved pokemon
         res.render('pokemon/index', {
             pokemon: pokeList
