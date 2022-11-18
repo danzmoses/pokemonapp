@@ -17,7 +17,9 @@
     <div class="pokemon-grid">
         <% pokemon.forEach(p => { %>
                 <div>
-                    <img src="<%= p['sprites']['front_default'] %>">
+                    <a href='/pokemon/<%= p.name %>'>
+                        <img src="<%= p['sprites']['front_default'] %>">
+                    </a>                        
                     <p><%= p['name'] %></p>
                 </div>               
         <% }) %>

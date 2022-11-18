@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <img src="<%= pokemon['sprites']['front_default'] %>">
+        <p>Name: <%= pokemon['name'] %></p>
+        <p>Genus: <%= genus %></p>
+        <p>Description: <%= desc %></p>
+        <p>Height: <%= pokemon['height'] %></p>
+        <p>Weight: <%= pokemon['weight'] %></p>
+        <p>Evo Chain:</p> 
+        <% for (let i = 0; i < chain.length; ++i) { %>
+            <%= chain[i] %>
+            <% if (i + 1 < chain.length) { %>
+                &#8594
+            <% } %>
+        <% }%>
+    </div>   
+</div>   

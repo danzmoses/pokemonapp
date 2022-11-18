@@ -54,6 +54,11 @@ const generationMap = [
     }
 ]
 
+// Make first character uppercase
+function capitalizeFirstChar(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
 // All pokemon / Search pokemon
 router.get('/', async (req, res, next) => {
 
@@ -115,8 +120,30 @@ router.get('/', async (req, res, next) => {
 router.get('/:name', async (req, res, next) => {
     try {
         const pokemon = await axios.get(BASE_URL + `/pokemon/${req.params.name}`)
-        res.render('pokemon/index', {
-            pokemon: pokemon.data
+        const species = await axios.get(pokemon.data.species.url)
+        const evoChain = await axios.get(species.data.evolution_chain.url)
+        let temp = evoChain.data.chain
+        const chain = []
+        while (temp) {
+            chain.push(capitalizeFirstChar(temp.species.name))
+            temp = temp.evolves_to[0]
+        }
+        const desc = species.data.flavor_text_entries[0].flavor_text
+        pokemon.data.name = capitalizeFirstChar(pokemon.data.name)
+
+        let genus
+        species.data.genera.forEach(genera => {
+            if (genera.language.name === 'en') {
+                genus = genera.genus
+            }
+        })
+
+        
+        res.render('pokemon/show', {
+            pokemon: pokemon.data,
+            chain: chain,
+            desc: desc,
+            genus: genus
         })
     } catch (err) {
         next(err)
