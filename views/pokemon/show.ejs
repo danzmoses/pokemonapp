@@ -2,16 +2,23 @@
     <div>
         <img src="<%= pokemon['sprites']['front_default'] %>">
         <p>Name: <%= pokemon['name'] %></p>
-        <p>Genus: <%= genus %></p>
-        <p>Description: <%= desc %></p>
-        <p>Height: <%= pokemon['height'] %></p>
-        <p>Weight: <%= pokemon['weight'] %></p>
-        <p>Evo Chain:</p> 
-        <% for (let i = 0; i < chain.length; ++i) { %>
-            <%= chain[i] %>
-            <% if (i + 1 < chain.length) { %>
-                &#8594
+        <p>Genus: <%= pokemon['genus'] %></p>
+        <p>Types: 
+            <%= pokemon['types'][0]['type']['name'] %>
+            <% if (pokemon['types'].length > 1) { %>
+                / <%= pokemon['types'][1]['type']['name'] %>
             <% } %>
-        <% }%>
+        </p>
+        <p>Description: <%= pokemon['description'] %></p>
+        <p>Height: <%= pokemon['height'] %></p>
+        <p>Weight: <%= pokemon['weight'] %> lbs</p>
+        <p>Evolution Chain:
+            <% for (let i = 0; i < pokemon['chain'].length; ++i) { %>
+                <%= pokemon['chain'][i] %>
+                <% if (i + 1 < pokemon['chain'].length) { %>
+                    &#8594
+                <% } %>
+            <% }%>
+        </p> 
     </div>   
 </div>   
