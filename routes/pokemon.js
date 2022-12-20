@@ -126,7 +126,8 @@ router.get('/', async (req, res, next) => {
 
         // render main page with retrieved pokemon
         res.render('pokemon/index', {
-            pokemon: pokeList
+            pokemon: pokeList,
+            searchOptions: req.query.name
         })
         next()
 
