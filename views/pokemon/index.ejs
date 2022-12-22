@@ -19,6 +19,7 @@
             <option value="8">Galar</option>
         </select>
     </form>
+    <br>
     <div class="pokemon-grid">
         <% pokemon.forEach(p => { %>
                 <div>
@@ -35,5 +36,6 @@
 <script>
     var dropdown = document.getElementById("generation");
     var prevRegion = document.getElementById("prevRegion");
-    dropdown.value = prevRegion.value;
+    if (prevRegion.value !== '')
+        dropdown.value = prevRegion.value;
 </script>
