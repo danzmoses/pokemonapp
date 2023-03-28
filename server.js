@@ -15,6 +15,7 @@ app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 app.use(express.static('public'))
 
+// .\mongod.exe --dbpath="c:\data\db" --ipv6
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
