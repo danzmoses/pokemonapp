@@ -5,8 +5,8 @@
 <!-- <a href="/pokemon">Pokemon</a> -->
 <div>
     <form action="/pokemon" method="GET">
-        <input type="hidden" id="prevRegion" value="<%= prevRegion %>">
-        <input type="text" name="name" value="<%= searchOptions %>">
+        <input type="hidden" id="prevRegion" value="<%= typeof(prevRegion) != 'undefined' ? prevRegion : 1 %>">
+        <input type="text" name="name" value="<%= typeof(searchOptions) != 'undefined' ? searchOptions : '' %>">
         <button type="submit">Search</button>
         <select id="generation" name="generation">
             <option value="1">Kanto</option>
@@ -36,6 +36,5 @@
 <script>
     var dropdown = document.getElementById("generation");
     var prevRegion = document.getElementById("prevRegion");
-    if (prevRegion.value !== '')
-        dropdown.value = prevRegion.value;
+    dropdown.value = prevRegion.value != 'undefined' ? prevRegion.value : 1;
 </script>
