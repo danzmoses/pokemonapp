@@ -1,10 +1,12 @@
 @import 'shared/pokemon.css';
 @import 'shared/header.css';
+@import 'shared/variables.css';
 
 :root {
     /* font-family: 'Gotham Rounded'; */
     font-size: 20px;
-    color: var(--color-text-light)
+    /* color: var(--color-text-light); */
+    color: var(--color-text-dark);
 }
 
 *, *::before, *::after {
@@ -12,7 +14,7 @@
 }
 
 body {
-    background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light));
+    background: linear-gradient(60deg, var(--color-background-dark), var(--color-background-light));
 }
 
 .container {
