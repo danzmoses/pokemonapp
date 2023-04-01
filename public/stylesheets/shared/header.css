@@ -32,7 +32,8 @@
 
 .header-nav li a {
     text-decoration: none;
-    color: var(--color-text-light);
+    /* color: var(--color-text-light); */
+    color: var(--color-text-dark);
     font-weight: var(--nav-link-font-weight);
     padding: 1rem;
 }
