@@ -1,9 +1,11 @@
 @import 'shared/pokemon.css';
 @import 'shared/header.css';
 @import 'shared/variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root {
     /* font-family: 'Gotham Rounded'; */
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     /* color: var(--color-text-light); */
     color: var(--color-text-dark);

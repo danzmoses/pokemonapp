@@ -22,13 +22,15 @@
     <br>
     <div class="pokemon-grid">
         <% pokemon.forEach(p => { %>
-                <div>
+                <div class="pokemon-container">
                     <div class="sprite-frame">
                         <a href='/pokemon/<%= p.name %>'>
                             <img src="<%= p['sprites']['front_default'] %>">
                         </a>                      
-                    </div>  
-                    <p style="position: relative; top: -10px;"><%= capitalizeFirstChar(p['name']) %></p>
+                    </div>
+                    <div class="pokemon-details-text">
+                        <%= capitalizeFirstChar(p['name']) %>
+                    </div>
                 </div>               
         <% }) %>
     </div>        
