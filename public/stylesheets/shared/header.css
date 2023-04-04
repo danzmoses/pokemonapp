@@ -18,6 +18,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5rem;
+    background-color: #dee1e3;
+    border: solid #c7cbce;
+    border-width: 0 0 1px;
 }
 
 .header-nav ul {
@@ -28,6 +31,12 @@
 
 .header-nav li {
     list-style: none;
+    padding: 25px;
+    border: solid 3px transparent;
+}
+
+.header-nav li:hover {
+    border-bottom: solid 3px #393b3d;
 }
 
 .header-nav li a {
@@ -35,7 +44,7 @@
     /* color: var(--color-text-light); */
     color: var(--color-text-dark);
     font-weight: var(--nav-link-font-weight);
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 
 .header-nav li a:hover, .header-title:hover {

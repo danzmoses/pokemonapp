@@ -16,7 +16,8 @@
 }
 
 body {
-    background: linear-gradient(60deg, var(--color-background-dark), var(--color-background-light));
+    /* background: linear-gradient(60deg, var(--color-background-dark), var(--color-background-light)); */
+    background: #f2f4f5;
 }
 
 .container {
