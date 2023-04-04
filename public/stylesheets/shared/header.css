@@ -31,7 +31,7 @@
 
 .header-nav li {
     list-style: none;
-    padding: 25px;
+    /* padding: 25px; */
     border: solid 3px transparent;
 }
 
@@ -45,6 +45,8 @@
     color: var(--color-text-dark);
     font-weight: var(--nav-link-font-weight);
     /* padding: 1rem; */
+    display: inline-block;
+    padding: 25px;
 }
 
 .header-nav li a:hover, .header-title:hover {
