@@ -39,8 +39,14 @@
     box-shadow: -10px 5px 15px black;
 }
 
-.pokemon-container .pokemon-details-text {
+.pokemon-container .pokemon-name-text {
     margin-top: 10px;
+}
+
+.pokemon-container .pokemon-types-text {
+    /* border: 1px solid gray; */
+    font-size: medium;
+    font-weight: bold;
 }
 
 #loading {
