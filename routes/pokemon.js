@@ -119,10 +119,15 @@ router.get('/', async (req, res, next) => {
         const pokeList = await Promise.all(promises)
         
         console.log(promises.length)
-
-        // pokeList.forEach(p => {
-        //     p.name = capitalizeFirstChar(p.name)
-        // })
+        
+        
+        pokeList.forEach(p => {
+            // p['name'] = capitalizeFirstChar(p['name'])
+            p['type1'] = capitalizeFirstChar(p['types'][0]['type']['name'][0]);
+            if (Object.keys(p['types']).length > 1) {
+                p['type2'] = capitalizeFirstChar(p['types'][1]['type']['name'][0])
+            }         
+        })
 
         // render main page with retrieved pokemon
         res.render('pokemon/index', {

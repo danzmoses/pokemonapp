@@ -30,6 +30,8 @@
                     </div>
                     <div class="pokemon-details-text">
                         <%= capitalizeFirstChar(p['name']) %>
+                        <br>
+                        <%= p['type1'] %> <%= typeof(p['type2']) != 'undefined' ? '/ ' + p['type2'] : '' %>
                     </div>
                 </div>               
         <% }) %>
