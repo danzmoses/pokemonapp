@@ -13,7 +13,7 @@
 .pokemon-container {
     /* position: relative; */
     width: 150px;
-    height: 175px;
+    height: 200px;
     display: block;
     justify-content: center;
     align-items: center;
@@ -43,11 +43,16 @@
     margin-top: 10px;
 }
 
-.pokemon-container .pokemon-types-text {
-    /* border: 1px solid gray; */
+.pokemon-container table {
     color: white;
     margin: auto;
     font-size: medium;
+    border-spacing: 5px 0px;
+}
+
+.pokemon-container table td {
+    width: 70px; 
+    border-radius: 2px;
 }
 
 #loading {

@@ -31,19 +31,16 @@
                     <div class="pokemon-name-text">
                         <%= capitalizeFirstChar(p['name']) %>
                     </div>
-                    <table class="pokemon-types-text">
+                    <table>
                         <tbody>
                             <tr>
-                                <script>
-                                    console.log('<%= p['type1'] %> <%= p['color1'] %>');
-                                </script>
-                                <td style="width: 70px; border-radius: 2px; background: <%= p['color1'] %>;">
+                                <td style="background: <%= p['color1'] %>;">
                                     <span>
                                         <b><%= p['type1'] %></b>
                                     </span>
                                 </td>
                                 <% if (typeof(p['color2']) != 'undefined') { %>
-                                    <td style="width: 70px; border-radius: 2px; background: <%= p['color2'] %>;">
+                                    <td style="background: <%= p['color2'] %>;">
                                         <span>
                                             <b><%= p['type2'] %><b>
                                         </span>
