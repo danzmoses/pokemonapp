@@ -34,7 +34,7 @@
                     <table class="pokemon-types-text">
                         <tbody>
                             <tr>
-                                <script>console.log('<%= p %>');</script>
+                                <script>console.log(JSON.stringify('<%= p %>'));</script>
                                 <td style="width: 70px; border-radius: 2px; background: <%= p['color1'] %>;">
                                     <span>
                                         <b><%= p['type1'] %></b>
