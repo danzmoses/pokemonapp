@@ -142,15 +142,15 @@ router.get('/', async (req, res, next) => {
         console.log(promises.length)
         
         
-        pokeList.forEach(p => {
-            // p['name'] = capitalizeFirstChar(p['name'])
+        // add types and colors to each pokemon using promises
+        await Promise.all(pokeList.map(async (p) => {
             p['type1'] = capitalizeFirstChar(p['types'][0]['type']['name']);
             p['color1'] = capitalizeFirstChar(typeToColor[p['types'][0]['type']['name']]);
             if (Object.keys(p['types']).length > 1) {
                 p['type2'] = capitalizeFirstChar(p['types'][1]['type']['name']);
                 p['color2'] = capitalizeFirstChar(typeToColor[p['types'][1]['type']['name']]);
-            }         
-        })
+            }}
+        ));
 
         // render main page with retrieved pokemon
         res.render('pokemon/index', {
