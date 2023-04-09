@@ -180,7 +180,11 @@ router.get('/:name', async (req, res, next) => {
             temp = temp.evolves_to[0]
         }
         pokemon.data.chain = chain
-        pokemon.data.description = species.data.flavor_text_entries[0].flavor_text
+        species.data.flavor_text_entries.forEach(entry => {
+            if (entry.language.name === 'en') {
+                pokemon.data.description = entry.flavor_text
+            }
+        })
         pokemon.data.name = capitalizeFirstChar(pokemon.data.name)
 
         pokemon.data.types[0].type.name = capitalizeFirstChar(pokemon.data.types[0].type.name)
@@ -197,6 +201,8 @@ router.get('/:name', async (req, res, next) => {
         pokemon.data.height = decimetersToFeetInches(pokemon.data.height)
         pokemon.data.weight = hectogramsToPounds(pokemon.data.weight).toFixed(1)
         
+        console.log(pokemon)
+
         res.render('pokemon/show', {
             pokemon: pokemon.data
         })
