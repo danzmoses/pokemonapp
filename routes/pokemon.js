@@ -134,12 +134,12 @@ router.get('/', async (req, res, next) => {
         ))
 
         // display loading while waiting for promises to resolve
-        console.log('Loading...')
+        // console.log('Loading...')
 
         // get each individual pokemon from the list
         const pokeList = await Promise.all(promises)
         
-        console.log(promises.length)
+        // console.log(promises.length)
         
         
         // add types and colors to each pokemon using promises
@@ -173,6 +173,7 @@ router.get('/:name', async (req, res, next) => {
         const pokemon = await axios.get(BASE_URL + `/pokemon/${req.params.name}`)
         const species = await axios.get(pokemon.data.species.url)
         const evoChain = await axios.get(species.data.evolution_chain.url)
+
         let temp = evoChain.data.chain
         const chain = []
         while (temp) {
@@ -197,7 +198,7 @@ router.get('/:name', async (req, res, next) => {
                 pokemon.data.genus = genera.genus
             }
         })
-
+    
         pokemon.data.height = decimetersToFeetInches(pokemon.data.height)
         pokemon.data.weight = hectogramsToPounds(pokemon.data.weight).toFixed(1)
         
