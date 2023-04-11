@@ -55,6 +55,10 @@
     border-radius: 2px;
 }
 
+.hide {
+    display: none;
+}
+
 #loading {
     position: fixed;
     display: block;

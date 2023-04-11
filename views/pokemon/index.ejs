@@ -6,7 +6,7 @@
 <div>
     <form action="/pokemon" method="GET">
         <input type="hidden" id="prevRegion" value="<%= typeof(prevRegion) != 'undefined' ? prevRegion : 1 %>">
-        <input type="search" name="name" value="<%= typeof(searchOptions) != 'undefined' ? searchOptions : '' %>" autocomplete="off">
+        <input type="search" id="search" name="name" value="<%= typeof(searchOptions) != 'undefined' ? searchOptions : '' %>" autocomplete="off">
         <button type="submit">Search</button>
         <select id="generation" name="generation">
             <option value="1">Kanto</option>
@@ -58,3 +58,4 @@
     var prevRegion = document.getElementById("prevRegion");
     dropdown.value = typeof(prevRegion) != 'undefined' ? prevRegion.value : 1;
 </script>
+<script src="/javascript/filterPokemon.js"></script>
