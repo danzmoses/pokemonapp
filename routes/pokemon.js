@@ -117,8 +117,8 @@ router.get('/', async (req, res, next) => {
         })
 
         // make API call to get list of all pokemon
-        const pokemon = await axios.get(BASE_URL + `/pokemon?limit=${limit}&offset=${offset}`)
-        // const pokemon = await axios.get(BASE_URL + `/pokemon?limit=904&offset=0`)
+        // const pokemon = await axios.get(BASE_URL + `/pokemon?limit=${limit}&offset=${offset}`)
+        const pokemon = await axios.get(BASE_URL + `/pokemon?limit=904&offset=0`)
 
         console.log(pokemon.data.results)
 
