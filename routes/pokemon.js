@@ -164,6 +164,7 @@ router.get('/', async (req, res, next) => {
         // remove loading after all promises resolve
         console.log('Finished!')
     } catch (err) {
+        console.log(err)
         next(err)
     }
 })
