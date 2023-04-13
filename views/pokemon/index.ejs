@@ -7,7 +7,7 @@
     <form action="/pokemon" method="GET">
         <input type="hidden" id="prevRegion" value="<%= typeof(prevRegion) != 'undefined' ? prevRegion : 1 %>">
         <input type="search" id="search" name="name" value="<%= typeof(searchOptions) != 'undefined' ? searchOptions : '' %>" autocomplete="off">
-        <button type="submit">Search</button>
+        <!-- <button type="submit">Search</button> -->
         Generation:
         <select id="generation" name="generation">
             <option value="1">Kanto</option>

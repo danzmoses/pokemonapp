@@ -1,9 +1,11 @@
 let pokemonContainers = document.querySelectorAll('.pokemon-container');
 let searchBar = document.querySelector('#search');
 let typeContainer = document.querySelector('#type');
+let generationContainer = document.querySelector('#generation')
 
 searchBar.addEventListener('keyup', filterPokemon);
 typeContainer.addEventListener('input', filterPokemon);
+generationContainer.addEventListener('input', changeGeneration);
 
 function filterPokemon() {
     // reset pokemon before applying filters
@@ -36,4 +38,8 @@ function filterPokemon() {
             c.classList.add('hide');
         }
     })
+}
+
+function changeGeneration() {
+    window.location.href = '/pokemon?generation=' + generationContainer.value;
 }
